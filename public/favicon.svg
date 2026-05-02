@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-labelledby="title">
+  <title>Thomas Moraes</title>
+  <rect width="128" height="128" rx="34" fill="#213d33" />
+  <circle cx="104" cy="24" r="22" fill="#b86d3a" opacity="0.88" />
+  <path
+    d="M28 43.2h27.4v10.9h-7.7v30.7H35.8V54.1H28V43.2Zm34.5 0h12.2l10.2 18 10.2-18h12v41.6H95.5V62.6l-7.4 13.1h-6.8l-7.4-13v22.1H62.5V43.2Z"
+    fill="#fff8ef"
+  />
+</svg>

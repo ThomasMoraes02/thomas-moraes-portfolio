@@ -22,6 +22,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 150px;
 }
 
 body {
@@ -45,8 +46,9 @@ main {
 
 .hero {
   min-height: 100vh;
-  padding: 28px clamp(20px, 5vw, 72px) 72px;
+  padding: 56px clamp(20px, 5vw, 72px) 72px;
   position: relative;
+  scroll-margin-top: 150px;
 }
 
 .hero::before {
@@ -279,6 +281,7 @@ h3 {
   margin: 0 auto;
   max-width: 1180px;
   padding: 110px clamp(20px, 5vw, 72px);
+  scroll-margin-top: 150px;
 }
 
 .split,

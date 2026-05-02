@@ -24,6 +24,8 @@ const links = {
   linkedin: "https://www.linkedin.com/in/thomas-vinicius-de-moraes/",
 };
 
+const profileImage = `${import.meta.env.BASE_URL}perfil-thomas-moraes.jpeg`;
+
 const highlights = [
   "PHP & Node.js",
   "APIs RESTful",
@@ -242,7 +244,7 @@ export function App() {
 
           <aside className="profile-card" aria-label="Foto e resumo profissional">
             <div className="photo-frame">
-              <img src="/perfil-thomas-moraes.jpeg" alt="Thomas Moraes sorrindo" />
+              <img src={profileImage} alt="Thomas Moraes sorrindo" />
             </div>
             <div className="card-note">
               <span>Disponível para conexões profissionais</span>

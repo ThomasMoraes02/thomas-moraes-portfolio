@@ -221,6 +221,16 @@ export function App() {
           <a href="#experiencia">Experiência</a>
           <a href="#contato">Contato</a>
         </div>
+        <details className="mobile-menu">
+          <summary>Menu</summary>
+          <div className="mobile-menu-links">
+            <a href="#stack">Stack</a>
+            <a href="#servicos">Serviços</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#experiencia">Experiência</a>
+            <a href="#contato">Contato</a>
+          </div>
+        </details>
       </nav>
 
       <section className="hero" id="inicio">

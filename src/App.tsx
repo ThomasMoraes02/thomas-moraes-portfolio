@@ -28,11 +28,12 @@ const profileImage = `${import.meta.env.BASE_URL}perfil-thomas-moraes.jpeg`;
 
 const highlights = [
   "PHP & Node.js",
+  "E-commerce",
   "APIs RESTful",
   "Clean Architecture",
   "SEO técnico",
-  "IA aplicada à produtividade",
-  "Cloud & DevOps",
+  "IA generativa",
+  "Comunicação clara",
 ];
 
 const stackGroups: StackGroup[] = [
@@ -97,15 +98,14 @@ const stackGroups: StackGroup[] = [
     ],
   },
   {
-    title: "DevOps & Cloud",
+    title: "Infraestrutura web & Cloud",
     description:
-      "Ambientes reproduzíveis, pipelines e infraestrutura para levar código do desenvolvimento à produção com confiança.",
+      "Conhecimentos práticos para configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis.",
     items: [
       "Docker",
       "Docker Compose",
       "GitHub",
       "GitLab",
-      "Buddy CI",
       "AWS",
       "Google Cloud Platform",
       "Apache",
@@ -120,9 +120,40 @@ const stackGroups: StackGroup[] = [
       "n8n",
       "Bling ERP",
       "Google APIs",
+      "Codex",
+      "Claude",
+      "GitHub Copilot",
       "Inteligência Artificial",
       "Automação de workflows",
       "Produtividade com qualidade",
+    ],
+  },
+  {
+    title: "E-commerce & Operação",
+    description:
+      "Repertório em produtos digitais, marketplaces, integrações comerciais e rotinas operacionais que precisam escalar com organização.",
+    items: [
+      "Marketplaces",
+      "E-commerce",
+      "ERP",
+      "Bling",
+      "Produtos",
+      "Notas fiscais",
+      "Pagamentos",
+      "SEO para crescimento orgânico",
+    ],
+  },
+  {
+    title: "Colaboração profissional",
+    description:
+      "Organização, comunicação clara e abertura a feedbacks como parte do processo para entregar melhor com o time e com o negócio.",
+    items: [
+      "Organização",
+      "Comunicação",
+      "Feedbacks",
+      "Melhoria contínua",
+      "Visão de produto",
+      "Documentação",
     ],
   },
 ];
@@ -153,29 +184,29 @@ const projects: Project[] = [
 
 const services = [
   {
-    title: "Backoffice sob medida",
+    title: "Backoffices e painéis administrativos",
     description:
-      "Criação de painéis administrativos e ferramentas internas com Laravel Filament para organizar operações, cadastros, fluxos e rotinas de negócio.",
+      "Desenvolvimento de ferramentas internas com Laravel Filament para centralizar cadastros, fluxos operacionais, permissões, relatórios e rotinas que hoje dependem de processos manuais.",
   },
   {
-    title: "Integrações com Bling ERP",
+    title: "Integrações para e-commerce e ERP",
     description:
-      "Grande experiência conectando Bling a produtos, e-commerces, notas fiscais, pagamentos e processos comerciais que precisam conversar sem retrabalho.",
+      "Criação e manutenção de integrações entre Bling, lojas virtuais, marketplaces, produtos, notas fiscais, pagamentos e sistemas internos, reduzindo retrabalho e falhas entre plataformas.",
   },
   {
-    title: "SEO técnico e crescimento orgânico",
+    title: "SEO técnico para produtos digitais",
     description:
-      "Especialização em SEO para melhorar indexação, estrutura técnica, performance e tráfego orgânico com foco em crescimento sustentável.",
+      "Atuação em estrutura técnica, indexação, performance, organização de páginas e melhorias orientadas a crescimento orgânico, especialmente em e-commerces e marketplaces.",
   },
   {
-    title: "Automações com n8n e IA",
+    title: "Automações com n8n e IA generativa",
     description:
-      "Construção de automações de alta escala, integrações com Google e agentes de IA para acelerar processos mantendo controle, rastreabilidade e qualidade.",
+      "Construção de workflows com n8n, integrações com Google e agentes de IA para acelerar atendimento, descrição de produtos, rotinas internas e tarefas repetitivas com controle e revisão humana.",
   },
   {
-    title: "Infraestrutura web",
+    title: "Consultoria técnica e evolução de sistemas",
     description:
-      "Conhecimento prático em Apache, Nginx, Docker e ambientes de aplicação para melhorar previsibilidade, configuração e sustentação técnica.",
+      "Apoio na organização de código, arquitetura, APIs, ambientes Docker e melhoria contínua de sistemas existentes, com comunicação próxima e abertura constante a feedbacks.",
   },
 ];
 
@@ -239,7 +270,7 @@ export function App() {
             <p className="eyebrow">Barueri, São Paulo | Software Engineer</p>
             <h1>Thomas Vinicius de Moraes</h1>
             <p className="lead">
-              Backend engineer especializado em PHP, Node.js com TypeScript, integrações,
+              Software Engineer com foco em backend, PHP, Node.js com TypeScript, integrações,
               automações, SEO técnico e arquitetura para produtos digitais que precisam escalar.
             </p>
             <div className="hero-actions">
@@ -257,8 +288,8 @@ export function App() {
               <img src={profileImage} alt="Thomas Moraes sorrindo" />
             </div>
             <div className="card-note">
-              <span>Disponível para conexões profissionais</span>
-              <strong>Backend, arquitetura e IA aplicada ao dia a dia.</strong>
+              <span>Aberto a CLT, PJ, consultoria e freelance</span>
+              <strong>Software Engineer com foco em backend e IA aplicada.</strong>
             </div>
           </aside>
         </div>
@@ -276,12 +307,15 @@ export function App() {
           <h2>Perfil técnico com olhar para produto.</h2>
         </div>
         <p>
-          Sou Software Engineer com pós-graduação em Engenharia de Software, experiência em backend
-          PHP, backend Node.js com TypeScript, APIs, dados, mensageria, cloud e pipelines de
-          entrega. Também atuo como prestador de serviços em backoffices, integrações com Bling,
-          automações com n8n, SEO técnico e infraestrutura web. No momento, estou aprofundando
-          estudos em Hyperf, Swoole e inteligência artificial para acelerar o ciclo de
-          desenvolvimento mantendo qualidade, clareza técnica e consistência.
+          Sou Software Engineer com pós-graduação em Engenharia de Software e foco principal em
+          backend, atuando com PHP, Node.js com TypeScript, APIs, dados, mensageria,
+          infraestrutura web, e-commerce e automações. Também desenvolvo interfaces frontend
+          quando o produto precisa de uma experiência completa e bem construída. Estou aberto a
+          oportunidades CLT, PJ, consultoria e freelance, especialmente em backoffices,
+          integrações com Bling, automações com n8n, SEO técnico e evolução de sistemas
+          existentes. No momento, estou aprofundando estudos em Hyperf, Swoole e IA generativa
+          com ferramentas como Codex, Claude e GitHub Copilot para aumentar produtividade sem
+          abrir mão de qualidade, clareza técnica e revisão cuidadosa.
         </p>
       </section>
 

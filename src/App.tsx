@@ -14,9 +14,11 @@ type Experience = {
 };
 
 type StackGroup = {
+  icon: string;
   title: string;
   description: string;
   items: string[];
+  featured?: boolean;
 };
 
 const links = {
@@ -26,135 +28,77 @@ const links = {
 
 const profileImage = `${import.meta.env.BASE_URL}perfil-thomas-moraes.jpeg`;
 
-const highlights = [
-  "PHP & Node.js",
-  "E-commerce",
-  "APIs RESTful",
-  "Clean Architecture",
-  "SEO técnico",
-  "IA generativa",
-  "Comunicação clara",
+const stats = [
+  { value: "5+", label: "Anos de experiência" },
+  { value: "9", label: "Áreas de stack" },
+  { value: "#7.8", label: "Posição Google · Semexe" },
 ];
 
 const stackGroups: StackGroup[] = [
   {
+    icon: "⚙️",
     title: "Backend PHP",
     description:
       "Ecossistema principal para construir aplicações, integrações, APIs e sistemas com regras de negócio bem definidas.",
-    items: [
-      "PHP",
-      "Laravel",
-      "Laravel Filament",
-      "Slim",
-      "CodeIgniter",
-      "CsCart",
-      "ReactPHP",
-      "Doctrine",
-      "Hyperf",
-      "Swoole",
-    ],
+    items: ["PHP", "Laravel", "Laravel Filament", "Slim", "CodeIgniter", "CsCart", "ReactPHP", "Doctrine", "Hyperf", "Swoole"],
+    featured: true,
   },
   {
+    icon: "🟢",
     title: "Backend Node.js",
     description:
       "Construção de APIs, serviços, integrações e BFFs com Node.js, TypeScript e frameworks leves.",
     items: ["Node.js", "TypeScript", "JavaScript", "Express", "Fastify"],
+    featured: true,
   },
   {
+    icon: "⚛️",
     title: "Frontend & Interfaces",
     description:
       "Criação de experiências web modernas quando o produto precisa de uma interface clara, responsiva e bem construída.",
     items: ["React", "TypeScript", "JavaScript", "Vite"],
   },
   {
+    icon: "🏛️",
     title: "Arquitetura & Qualidade",
     description:
       "Práticas e ferramentas para manter software compreensível, testável e preparado para crescer sem virar dívida invisível.",
-    items: [
-      "APIs RESTful",
-      "Clean Architecture",
-      "Domain Driven Design",
-      "Test Driven Development",
-      "PHPUnit",
-      "Pest",
-      "Jest",
-      "Clean Code",
-    ],
+    items: ["APIs RESTful", "Clean Architecture", "Domain Driven Design", "TDD", "PHPUnit", "Pest", "Jest", "Clean Code"],
   },
   {
+    icon: "🗄️",
     title: "Dados, analytics & busca",
     description:
       "Modelagem, persistência, cache, mensageria, busca e análise de dados para apoiar decisões de produto.",
-    items: [
-      "MySQL",
-      "PostgreSQL",
-      "MariaDB",
-      "SQLite",
-      "MongoDB",
-      "Redis",
-      "RabbitMQ",
-      "OpenSearch",
-      "Metabase",
-    ],
+    items: ["MySQL", "PostgreSQL", "MariaDB", "SQLite", "MongoDB", "Redis", "RabbitMQ", "OpenSearch", "Metabase"],
   },
   {
-    title: "Infraestrutura web & Cloud",
+    icon: "☁️",
+    title: "Infraestrutura & Cloud",
     description:
-      "Conhecimentos práticos para configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis.",
-    items: [
-      "Docker",
-      "Docker Compose",
-      "GitHub",
-      "GitLab",
-      "AWS",
-      "Google Cloud Platform",
-      "Apache",
-      "Nginx",
-    ],
+      "Configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis e reproduzíveis.",
+    items: ["Docker", "Docker Compose", "GitHub", "GitLab", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
   },
   {
+    icon: "🤖",
     title: "Automação & IA",
     description:
-      "Uso de automações e inteligência artificial para aumentar produtividade sem abrir mão de revisão, qualidade e engenharia.",
-    items: [
-      "n8n",
-      "Bling ERP",
-      "Google APIs",
-      "Codex",
-      "Claude",
-      "GitHub Copilot",
-      "Inteligência Artificial",
-      "Automação de workflows",
-      "Produtividade com qualidade",
-    ],
+      "Uso de automações e inteligência artificial para aumentar produtividade sem abrir mão de revisão e qualidade.",
+    items: ["n8n", "Bling ERP", "Google APIs", "Codex", "Claude", "GitHub Copilot", "Agentes de IA", "Workflows"],
   },
   {
+    icon: "🛒",
     title: "E-commerce & Operação",
     description:
-      "Repertório em produtos digitais, marketplaces, integrações comerciais e rotinas operacionais que precisam escalar com organização.",
-    items: [
-      "Marketplaces",
-      "E-commerce",
-      "ERP",
-      "Bling",
-      "Produtos",
-      "Notas fiscais",
-      "Pagamentos",
-      "SEO para crescimento orgânico",
-    ],
+      "Repertório em produtos digitais, marketplaces, integrações comerciais e rotinas operacionais que precisam escalar.",
+    items: ["Marketplaces", "E-commerce", "ERP", "Bling", "Produtos", "Notas fiscais", "Pagamentos", "SEO técnico"],
   },
   {
+    icon: "🤝",
     title: "Colaboração profissional",
     description:
-      "Organização, comunicação clara e abertura a feedbacks como parte do processo para entregar melhor com o time e com o negócio.",
-    items: [
-      "Organização",
-      "Comunicação",
-      "Feedbacks",
-      "Melhoria contínua",
-      "Visão de produto",
-      "Documentação",
-    ],
+      "Organização, comunicação clara e abertura a feedbacks como parte do processo para entregar melhor com o time.",
+    items: ["Organização", "Comunicação", "Feedbacks", "Melhoria contínua", "Visão de produto", "Documentação"],
   },
 ];
 
@@ -162,21 +106,21 @@ const projects: Project[] = [
   {
     title: "SEO técnico para marketplace",
     description:
-      "Atuação em otimização técnica, produto e estrutura de páginas para escalar tráfego orgânico e melhorar posicionamento em mecanismos de busca.",
+      "Otimização técnica, produto e estrutura de páginas para escalar tráfego orgânico e melhorar posicionamento em mecanismos de busca.",
     tags: ["SEO", "Marketplace", "Performance", "Produto"],
     status: "Case Semexe",
   },
   {
     title: "Automações e agentes de IA",
     description:
-      "Criação de workflows em n8n, integrações com Google e agentes de IA conectados a operações reais, reduzindo trabalho manual em escala.",
+      "Workflows em n8n, integrações com Google e agentes de IA conectados a operações reais, reduzindo trabalho manual em escala.",
     tags: ["n8n", "IA", "Google APIs", "Integrações"],
     status: "Automação",
   },
   {
     title: "Integrações ERP e backoffice",
     description:
-      "Desenvolvimento de backoffices com Laravel Filament e integrações com Bling para produtos, e-commerces, notas fiscais e pagamentos.",
+      "Backoffices com Laravel Filament e integrações com Bling para produtos, e-commerces, notas fiscais e pagamentos.",
     tags: ["Laravel Filament", "Bling", "ERP", "E-commerce"],
     status: "Serviços",
   },
@@ -221,7 +165,7 @@ const experiences: Experience[] = [
       "Evoluí frentes de SEO técnico e produto que contribuíram para levar a Semexe à primeira página do Google, saindo de posições médias entre 12 e 16 para patamares próximos de 8 e, mais recentemente, 7.8.",
       "Integrei agentes de IA ao marketplace para responder dúvidas de anúncios, criando uma comunicação mais direta e reduzindo a dependência de aguardar respostas manuais dos anunciantes.",
       "Implementei geração inteligente de descrições de anúncios a partir das informações cadastradas, usando fluxos em n8n integrados diretamente à operação do marketplace.",
-      "Containerizei o monolito com Docker, isolando dependências em containers e padronizando o ambiente local para que novos desenvolvedores consigam reproduzir a mesma experiência de desenvolvimento com mais previsibilidade.",
+      "Containerizei o monolito com Docker, isolando dependências em containers e padronizando o ambiente local para que novos desenvolvedores consigam reproduzir a mesma experiência com mais previsibilidade.",
     ],
   },
   {
@@ -234,8 +178,8 @@ const experiences: Experience[] = [
 ];
 
 const education = [
-  "Pós-graduação em Engenharia de Software - PUC Minas",
-  "Formações complementares e evolução contínua em tecnologia",
+  { icon: "🎓", text: "Pós-graduação em Engenharia de Software — PUC Minas" },
+  { icon: "📚", text: "Formações complementares e evolução contínua em tecnologia" },
 ];
 
 export function App() {
@@ -247,18 +191,18 @@ export function App() {
         </a>
         <div className="nav-links">
           <a href="#stack">Stack</a>
-          <a href="#servicos">Serviços</a>
-          <a href="#projetos">Projetos</a>
           <a href="#experiencia">Experiência</a>
+          <a href="#projetos">Projetos</a>
+          <a href="#servicos">Serviços</a>
           <a href="#contato">Contato</a>
         </div>
         <details className="mobile-menu">
           <summary>Menu</summary>
           <div className="mobile-menu-links">
             <a href="#stack">Stack</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#projetos">Projetos</a>
             <a href="#experiencia">Experiência</a>
+            <a href="#projetos">Projetos</a>
+            <a href="#servicos">Serviços</a>
             <a href="#contato">Contato</a>
           </div>
         </details>
@@ -267,66 +211,78 @@ export function App() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">Barueri, São Paulo | Software Engineer</p>
-            <h1>Thomas Vinicius de Moraes</h1>
+            <div className="status-badge">Disponível · CLT, PJ e Freelance</div>
+            <h1>
+              Thomas <span className="accent">Moraes</span>
+            </h1>
             <p className="lead">
-              Software Engineer com foco em backend, PHP, Node.js com TypeScript, integrações,
-              automações, SEO técnico e arquitetura para produtos digitais que precisam escalar.
+              Software Engineer com foco em backend, PHP, Node.js e TypeScript. Especialista em
+              integrações, automações com IA e arquitetura para produtos digitais que precisam
+              escalar.
             </p>
             <div className="hero-actions">
               <a className="button primary" href={links.linkedin} rel="noreferrer" target="_blank">
-                Ver LinkedIn
+                LinkedIn
               </a>
               <a className="button secondary" href={links.github} rel="noreferrer" target="_blank">
-                Ver GitHub
+                GitHub
               </a>
+            </div>
+            <div className="hero-stats">
+              {stats.map((stat) => (
+                <div className="stat" key={stat.label}>
+                  <span className="stat-value">{stat.value}</span>
+                  <span className="stat-label">{stat.label}</span>
+                </div>
+              ))}
             </div>
           </div>
 
           <aside className="profile-card" aria-label="Foto e resumo profissional">
             <div className="photo-frame">
-              <img src={profileImage} alt="Thomas Moraes sorrindo" />
+              <img src={profileImage} alt="Thomas Moraes" />
             </div>
-            <div className="card-note">
-              <span>Aberto a CLT, PJ, consultoria e freelance</span>
-              <strong>Software Engineer com foco em backend e IA aplicada.</strong>
+            <div className="terminal" aria-hidden="true">
+              <div className="terminal-bar">
+                <span className="terminal-dot red" />
+                <span className="terminal-dot yellow" />
+                <span className="terminal-dot green" />
+              </div>
+              <div className="terminal-body">
+                <div className="terminal-line">
+                  <span className="prompt">~/thomas $</span> whoami
+                </div>
+                <div className="terminal-line">
+                  <span className="output">&nbsp;&nbsp;Role: Software Engineer @ Semexe</span>
+                </div>
+                <div className="terminal-line">
+                  <span className="output">&nbsp;&nbsp;Stack: PHP · Node.js · TypeScript · IA</span>
+                </div>
+                <div className="terminal-line">
+                  <span className="output">&nbsp;&nbsp;Open to: CLT · PJ · Freelance</span>
+                </div>
+                <div className="terminal-line">
+                  <span className="prompt">~/thomas $</span>
+                  <span className="cursor"> _</span>
+                </div>
+              </div>
             </div>
           </aside>
         </div>
       </section>
 
-      <section className="marquee" aria-label="Principais competências">
-        {highlights.map((item) => (
-          <span key={item}>{item}</span>
-        ))}
-      </section>
-
-      <section className="section split" id="sobre">
-        <div>
-          <p className="section-kicker">Sobre</p>
-          <h2>Perfil técnico com olhar para produto.</h2>
-        </div>
-        <p>
-          Sou Software Engineer com pós-graduação em Engenharia de Software e foco principal em
-          backend, atuando com PHP, Node.js com TypeScript, APIs, dados, mensageria,
-          infraestrutura web, e-commerce e automações. Também desenvolvo interfaces frontend
-          quando o produto precisa de uma experiência completa e bem construída. Estou aberto a
-          oportunidades CLT, PJ, consultoria e freelance, especialmente em backoffices,
-          integrações com Bling, automações com n8n, SEO técnico e evolução de sistemas
-          existentes. No momento, estou aprofundando estudos em Hyperf, Swoole e IA generativa
-          com ferramentas como Codex, Claude e GitHub Copilot para aumentar produtividade sem
-          abrir mão de qualidade, clareza técnica e revisão cuidadosa.
-        </p>
-      </section>
-
-      <section className="section stack-section" id="stack">
-        <div className="section-heading">
-          <p className="section-kicker">Stack</p>
-          <h2>Uma stack conectada por engenharia de produto.</h2>
+      <section className="section" id="stack">
+        <div className="section-header">
+          <p className="section-label">Stack</p>
+          <h2>Uma stack conectada por engenharia de produto</h2>
         </div>
         <div className="stack-grid">
           {stackGroups.map((group) => (
-            <article className="stack-card" key={group.title}>
+            <article
+              className={`stack-card${group.featured ? " stack-featured" : ""}`}
+              key={group.title}
+            >
+              <div className="stack-card-icon">{group.icon}</div>
               <h3>{group.title}</h3>
               <p>{group.description}</p>
               <div className="tags">
@@ -339,32 +295,43 @@ export function App() {
         </div>
       </section>
 
-      <section className="section services-section" id="servicos">
-        <div className="section-heading">
-          <p className="section-kicker">Serviços</p>
-          <h2>Atuação prática para destravar operação, escala e crescimento.</h2>
+      <section className="section" id="experiencia">
+        <div className="section-header">
+          <p className="section-label">Experiência</p>
+          <h2>Uma trajetória em evolução contínua</h2>
         </div>
-        <div className="service-list">
-          {services.map((service) => (
-            <article className="service-item" key={service.title}>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+        <div className="timeline">
+          {experiences.map((item) => (
+            <article className="timeline-item" key={`${item.role}-${item.company}`}>
+              <div className="timeline-meta">
+                <div>
+                  <p className="timeline-role">{item.role}</p>
+                  <span className="timeline-company">{item.company}</span>
+                </div>
+                <span className="timeline-period">{item.period}</span>
+              </div>
+              <p className="timeline-desc">{item.description}</p>
+              {item.achievements && (
+                <ul className="achievement-list">
+                  {item.achievements.map((achievement) => (
+                    <li key={achievement}>{achievement}</li>
+                  ))}
+                </ul>
+              )}
             </article>
           ))}
         </div>
       </section>
 
       <section className="section" id="projetos">
-        <div className="section-heading">
-          <p className="section-kicker">Projetos</p>
-          <h2>Projetos com contexto, não só links soltos.</h2>
+        <div className="section-header">
+          <p className="section-label">Projetos</p>
+          <h2>Projetos com contexto, não só links soltos</h2>
         </div>
-        <div className="cards">
+        <div className="projects-grid">
           {projects.map((project) => (
             <article className="project-card" key={project.title}>
-              <div className="card-topline">
-                <span>{project.status}</span>
-              </div>
+              <span className="project-status">{project.status}</span>
               <h3>{project.title}</h3>
               <p>{project.description}</p>
               <div className="tags">
@@ -377,46 +344,39 @@ export function App() {
         </div>
       </section>
 
-      <section className="section timeline-section" id="experiencia">
-        <div className="section-heading">
-          <p className="section-kicker">Experiência</p>
-          <h2>Uma trajetória em evolução contínua.</h2>
+      <section className="section" id="servicos">
+        <div className="section-header">
+          <p className="section-label">Serviços</p>
+          <h2>Atuação prática para destravar operação e crescimento</h2>
         </div>
-        <div className="timeline">
-          {experiences.map((item) => (
-            <article className="timeline-item" key={`${item.role}-${item.company}`}>
-              <span>{item.period}</span>
-              <h3>
-                {item.role} · {item.company}
-              </h3>
-              <p>{item.description}</p>
-              {item.achievements ? (
-                <ul className="achievement-list">
-                  {item.achievements.map((achievement) => (
-                    <li key={achievement}>{achievement}</li>
-                  ))}
-                </ul>
-              ) : null}
+        <div className="service-list">
+          {services.map((service) => (
+            <article className="service-item" key={service.title}>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="section education-section">
-        <div>
-          <p className="section-kicker">Formação</p>
-          <h2>Base acadêmica e prática em engenharia.</h2>
+      <section className="section">
+        <div className="section-header">
+          <p className="section-label">Formação</p>
+          <h2>Base acadêmica e prática em engenharia</h2>
         </div>
         <div className="education-list">
           {education.map((item) => (
-            <span key={item}>{item}</span>
+            <div className="education-item" key={item.text}>
+              <span className="edu-icon">{item.icon}</span>
+              <span>{item.text}</span>
+            </div>
           ))}
         </div>
       </section>
 
-      <section className="contact" id="contato">
-        <p className="section-kicker">Contato</p>
-        <h2>Vamos conversar sobre tecnologia, produto e boas entregas?</h2>
+      <div className="contact" id="contato">
+        <p className="section-label">Contato</p>
+        <h2>Vamos conversar sobre tecnologia e boas entregas?</h2>
         <div className="hero-actions">
           <a className="button primary" href={links.linkedin} rel="noreferrer" target="_blank">
             Conectar no LinkedIn
@@ -425,7 +385,7 @@ export function App() {
             Explorar GitHub
           </a>
         </div>
-      </section>
+      </div>
     </main>
   );
 }

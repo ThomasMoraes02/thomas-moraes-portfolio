@@ -10,6 +10,7 @@ type Experience = {
   company: string;
   period: string;
   description: string;
+  note?: string;
   achievements?: string[];
 };
 
@@ -21,6 +22,11 @@ type StackGroup = {
   featured?: boolean;
 };
 
+type Course = {
+  name: string;
+  year: string;
+};
+
 const links = {
   github: "https://github.com/ThomasMoraes02",
   linkedin: "https://www.linkedin.com/in/thomas-vinicius-de-moraes/",
@@ -29,9 +35,9 @@ const links = {
 const profileImage = `${import.meta.env.BASE_URL}perfil-thomas-moraes.jpeg`;
 
 const stats = [
-  { value: "5+", label: "Anos de experiência" },
+  { value: "7+", label: "Anos de experiência" },
+  { value: "Tech Lead", label: "Semexe · 2 anos" },
   { value: "9", label: "Áreas de stack" },
-  { value: "#7.8", label: "Posição Google · Semexe" },
 ];
 
 const stackGroups: StackGroup[] = [
@@ -47,8 +53,8 @@ const stackGroups: StackGroup[] = [
     icon: "🟢",
     title: "Backend Node.js",
     description:
-      "Construção de APIs, serviços, integrações e BFFs com Node.js, TypeScript e frameworks leves.",
-    items: ["Node.js", "TypeScript", "JavaScript", "Express", "Fastify"],
+      "Construção de APIs, serviços, integrações e BFFs com Node.js, TypeScript e frameworks leves e robustos.",
+    items: ["Node.js", "TypeScript", "JavaScript", "Express", "Fastify", "NestJS"],
     featured: true,
   },
   {
@@ -70,35 +76,35 @@ const stackGroups: StackGroup[] = [
     title: "Dados, analytics & busca",
     description:
       "Modelagem, persistência, cache, mensageria, busca e análise de dados para apoiar decisões de produto.",
-    items: ["MySQL", "PostgreSQL", "MariaDB", "SQLite", "MongoDB", "Redis", "RabbitMQ", "OpenSearch", "Metabase"],
+    items: ["MySQL", "PostgreSQL", "MariaDB", "SQLite", "MongoDB", "Redis", "RabbitMQ", "OpenSearch", "Elasticsearch", "BigQuery", "Metabase"],
   },
   {
     icon: "☁️",
     title: "Infraestrutura & Cloud",
     description:
       "Configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis e reproduzíveis.",
-    items: ["Docker", "Docker Compose", "GitHub", "GitLab", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
+    items: ["Docker", "Docker Compose", "Linux", "GitHub Actions", "Buddy", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
   },
   {
     icon: "🤖",
     title: "Automação & IA",
     description:
       "Uso de automações e inteligência artificial para aumentar produtividade sem abrir mão de revisão e qualidade.",
-    items: ["n8n", "Bling ERP", "Google APIs", "Codex", "Claude", "GitHub Copilot", "Agentes de IA", "Workflows"],
+    items: ["n8n", "Google APIs", "Agentes de IA", "Claude", "GitHub Copilot", "Codex", "Autentique", "Workflows"],
   },
   {
     icon: "🛒",
     title: "E-commerce & Operação",
     description:
-      "Repertório em produtos digitais, marketplaces, integrações comerciais e rotinas operacionais que precisam escalar.",
-    items: ["Marketplaces", "E-commerce", "ERP", "Bling", "Produtos", "Notas fiscais", "Pagamentos", "SEO técnico"],
+      "5 anos de repertório em produtos digitais, marketplaces, ERPs e rotinas operacionais que precisam escalar com organização.",
+    items: ["Marketplaces", "E-commerce", "Bling", "Omie", "Produtos", "Notas fiscais", "Pagamentos", "SEO técnico"],
   },
   {
     icon: "🤝",
     title: "Colaboração profissional",
     description:
       "Organização, comunicação clara e abertura a feedbacks como parte do processo para entregar melhor com o time.",
-    items: ["Organização", "Comunicação", "Feedbacks", "Melhoria contínua", "Visão de produto", "Documentação"],
+    items: ["Liderança técnica", "Code Review", "Comunicação", "Melhoria contínua", "Visão de produto", "Inglês avançado"],
   },
 ];
 
@@ -106,23 +112,37 @@ const projects: Project[] = [
   {
     title: "SEO técnico para marketplace",
     description:
-      "Otimização técnica, produto e estrutura de páginas para escalar tráfego orgânico e melhorar posicionamento em mecanismos de busca.",
+      "Evolução de SEO técnico e produto que posicionou a Semexe na primeira página do Google, saindo de posições entre 12 e 16 para o top 10 em termos estratégicos.",
     tags: ["SEO", "Marketplace", "Performance", "Produto"],
     status: "Case Semexe",
   },
   {
-    title: "Automações e agentes de IA",
+    title: "Reestruturação de busca com OpenSearch",
     description:
-      "Workflows em n8n, integrações com Google e agentes de IA conectados a operações reais, reduzindo trabalho manual em escala.",
-    tags: ["n8n", "IA", "Google APIs", "Integrações"],
-    status: "Automação",
+      "Redesenho da busca da plataforma de marketplace com OpenSearch, reduzindo custos operacionais e melhorando relevância e performance dos resultados.",
+    tags: ["OpenSearch", "Elasticsearch", "Backend", "Performance"],
+    status: "Case Semexe",
   },
   {
-    title: "Integrações ERP e backoffice",
+    title: "Agentes de IA e automações operacionais",
     description:
-      "Backoffices com Laravel Filament e integrações com Bling para produtos, e-commerces, notas fiscais e pagamentos.",
-    tags: ["Laravel Filament", "Bling", "ERP", "E-commerce"],
-    status: "Serviços",
+      "Agentes de IA para responder dúvidas de anúncios, geração automática de descrições e automações para Instagram via n8n integrados à operação do marketplace.",
+    tags: ["n8n", "Agentes de IA", "Google APIs", "Automação"],
+    status: "Case Semexe",
+  },
+  {
+    title: "Estruturação de tecnologia — empresa de planejamento financeiro",
+    description:
+      "Consultoria para criar a área de tecnologia do zero: backoffice com Filament, automações via n8n, integração com Omie ERP, assinatura digital com Autentique, métricas com Metabase e deploy com Docker e GitHub Actions.",
+    tags: ["Laravel Filament", "n8n", "Omie", "Docker", "Metabase"],
+    status: "Consultoria",
+  },
+  {
+    title: "Automação fiscal em volume — distribuidora de ferramentas",
+    description:
+      "Solução para emissão automatizada de centenas de notas fiscais de remessa e venda via integração com Bling ERP, eliminando processos manuais e garantindo conformidade em escala.",
+    tags: ["Bling", "Laravel", "BigQuery", "Google Cloud"],
+    status: "Consultoria",
   },
 ];
 
@@ -133,9 +153,9 @@ const services = [
       "Desenvolvimento de ferramentas internas com Laravel Filament para centralizar cadastros, fluxos operacionais, permissões, relatórios e rotinas que hoje dependem de processos manuais.",
   },
   {
-    title: "Integrações para e-commerce e ERP",
+    title: "Integrações com ERP — Bling e Omie",
     description:
-      "Criação e manutenção de integrações entre Bling, lojas virtuais, marketplaces, produtos, notas fiscais, pagamentos e sistemas internos, reduzindo retrabalho e falhas entre plataformas.",
+      "Criação e manutenção de integrações entre Bling, Omie, lojas virtuais, marketplaces, produtos, notas fiscais, pagamentos e sistemas internos, reduzindo retrabalho e falhas entre plataformas.",
   },
   {
     title: "SEO técnico para produtos digitais",
@@ -150,36 +170,67 @@ const services = [
   {
     title: "Consultoria técnica e evolução de sistemas",
     description:
-      "Apoio na organização de código, arquitetura, APIs, ambientes Docker e melhoria contínua de sistemas existentes, com comunicação próxima e abertura constante a feedbacks.",
+      "Apoio na organização de código, arquitetura, APIs, ambientes Docker e melhoria contínua de sistemas existentes — desde estruturar a primeira área de tecnologia de uma empresa até modernizar sistemas legados.",
   },
 ];
 
 const experiences: Experience[] = [
   {
-    role: "Software Engineer",
-    company: "Semexe",
-    period: "Atual",
+    role: "Senior Software Engineer",
+    company: "Tivit",
+    period: "Jul 2026 · Atual",
     description:
-      "Atuação em engenharia de software para marketplace, conectando backend, SEO técnico, automações, IA e evolução de infraestrutura.",
+      "Engenharia de software sênior com foco em backend Node.js, construção de APIs REST e infraestrutura em AWS.",
+  },
+  {
+    role: "Tech Lead → Senior Software Engineer",
+    company: "Semexe",
+    period: "Mai 2021 · Jul 2026",
+    note: "Jornada de Junior I a Tech Lead ao longo de 5 anos na mesma empresa",
+    description:
+      "Liderança técnica com gestão direta de equipe, atuando na evolução da plataforma de marketplace e no ciclo completo de desenvolvimento — da arquitetura à entrega em produção.",
     achievements: [
-      "Evoluí frentes de SEO técnico e produto que contribuíram para levar a Semexe à primeira página do Google, saindo de posições médias entre 12 e 16 para patamares próximos de 8 e, mais recentemente, 7.8.",
-      "Integrei agentes de IA ao marketplace para responder dúvidas de anúncios, criando uma comunicação mais direta e reduzindo a dependência de aguardar respostas manuais dos anunciantes.",
-      "Implementei geração inteligente de descrições de anúncios a partir das informações cadastradas, usando fluxos em n8n integrados diretamente à operação do marketplace.",
-      "Containerizei o monolito com Docker, isolando dependências em containers e padronizando o ambiente local para que novos desenvolvedores consigam reproduzir a mesma experiência com mais previsibilidade.",
+      "Conduzi a evolução de SEO técnico e produto que levou a Semexe à primeira página do Google, saindo de posições entre 12 e 16 para o top 10 em termos estratégicos.",
+      "Reestruturei a busca da plataforma com OpenSearch, contribuindo para redução de custos operacionais e melhora de relevância e performance.",
+      "Integrei agentes de IA ao marketplace para responder dúvidas de anúncios, reduzindo dependência de respostas manuais e agilizando a comunicação com anunciantes.",
+      "Implementei geração automática de descrições de anúncios e automações para Instagram com fluxos em n8n integrados à operação.",
+      "Containerizei o monolito com Docker, padronizando o ambiente de desenvolvimento e facilitando a entrada de novos devs.",
+      "Atuei com Redis, RabbitMQ, Metabase, Apache, Nginx e ambientes AWS e Google Cloud no dia a dia da plataforma.",
     ],
   },
   {
-    role: "Engenharia de Software",
-    company: "Trajetória profissional",
-    period: "Experiências anteriores",
+    role: "Consultor de Tecnologia",
+    company: "Projetos independentes",
+    period: "Em andamento",
     description:
-      "Histórico em tecnologia construindo repertório prático em desenvolvimento, sustentação, colaboração e melhoria contínua.",
+      "Consultoria técnica para empresas que precisam estruturar ou evoluir sua área de tecnologia — do zero à operação escalável.",
+    achievements: [
+      "Empresa de planejamento financeiro: criação da área de tecnologia do zero, com backoffice em Filament, automações via n8n, integração com Omie ERP, assinatura digital com Autentique e métricas com Metabase.",
+      "Distribuidora de ferramentas: automação de emissão em volume de notas fiscais de remessa e venda via Bling ERP, eliminando processos manuais e garantindo conformidade fiscal em escala.",
+    ],
+  },
+  {
+    role: "Desenvolvedor Web",
+    company: "Secretaria de Educação de Barueri",
+    period: "Mar 2020 · Set 2021",
+    description:
+      "Desenvolvimento e manutenção de plataforma de ensino municipal com PHP, CodeIgniter e JavaScript.",
   },
 ];
 
 const education = [
-  { icon: "🎓", text: "Pós-graduação em Engenharia de Software — PUC Minas" },
-  { icon: "📚", text: "Formações complementares e evolução contínua em tecnologia" },
+  { icon: "🎓", text: "Pós-graduação em Engenharia de Software — PUC Minas (2024)" },
+  { icon: "🎓", text: "Graduação em Gestão de TI — Universidade Nove de Julho (2022)" },
+  { icon: "🎓", text: "Técnico em Informática — Instituto Técnico de Barueri (2018)" },
+];
+
+const courses: Course[] = [
+  { name: "Branas.io — Clean Code & Clean Architecture", year: "2026" },
+  { name: "FullCycle — Docker na Prática e REST na Prática", year: "2025" },
+  { name: "Origamid — TypeScript", year: "2026" },
+  { name: "Google Cloud Summit", year: "2025" },
+  { name: "OpenEnglish — Inglês Técnico", year: "2023" },
+  { name: "Alura — PHP, Arquitetura, Infraestrutura e Docker", year: "2019–2024" },
 ];
 
 export function App() {
@@ -211,14 +262,15 @@ export function App() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="status-badge">Disponível · CLT, PJ e Freelance</div>
+            <div className="status-badge">Senior Software Engineer · Tivit</div>
             <h1>
               Thomas <span className="accent">Moraes</span>
             </h1>
             <p className="lead">
-              Software Engineer com foco em backend, PHP, Node.js e TypeScript. Especialista em
-              integrações, automações com IA e arquitetura para produtos digitais que precisam
-              escalar.
+              Engenheiro de Software com 7+ anos de experiência e trajetória de Junior a Tech Lead.
+              Especialista em backend PHP e Node.js, integrações com ERP, automações com IA e
+              arquitetura para produtos digitais que precisam escalar. Consultor independente para
+              projetos de backoffice, ERP e automação.
             </p>
             <div className="hero-actions">
               <a className="button primary" href={links.linkedin} rel="noreferrer" target="_blank">
@@ -253,13 +305,13 @@ export function App() {
                   <span className="prompt">~/thomas $</span> whoami
                 </div>
                 <div className="terminal-line">
-                  <span className="output">&nbsp;&nbsp;Role: Software Engineer @ Semexe</span>
+                  <span className="output">&nbsp;&nbsp;Role: Senior Software Engineer @ Tivit</span>
                 </div>
                 <div className="terminal-line">
                   <span className="output">&nbsp;&nbsp;Stack: PHP · Node.js · TypeScript · IA</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="output">&nbsp;&nbsp;Open to: CLT · PJ · Freelance</span>
+                  <span className="output">&nbsp;&nbsp;Consulting: Backoffice · ERP · Automações</span>
                 </div>
                 <div className="terminal-line">
                   <span className="prompt">~/thomas $</span>
@@ -310,6 +362,7 @@ export function App() {
                 </div>
                 <span className="timeline-period">{item.period}</span>
               </div>
+              {item.note && <span className="timeline-progression">{item.note}</span>}
               <p className="timeline-desc">{item.description}</p>
               {item.achievements && (
                 <ul className="achievement-list">
@@ -369,6 +422,15 @@ export function App() {
             <div className="education-item" key={item.text}>
               <span className="edu-icon">{item.icon}</span>
               <span>{item.text}</span>
+            </div>
+          ))}
+        </div>
+        <p className="courses-header">Cursos selecionados</p>
+        <div className="courses-grid">
+          {courses.map((course) => (
+            <div className="course-item" key={course.name}>
+              <span className="course-year">{course.year}</span>
+              <span>{course.name}</span>
             </div>
           ))}
         </div>

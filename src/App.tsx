@@ -83,7 +83,7 @@ const stackGroups: StackGroup[] = [
     title: "Infraestrutura & Cloud",
     description:
       "Configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis e reproduzíveis.",
-    items: ["Docker", "Docker Compose", "Linux", "GitHub Actions", "Buddy", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
+    items: ["Docker", "Kubernetes", "Docker Compose", "Linux", "GitHub Actions", "Buddy", "AWS", "Google Cloud Platform", "Apache", "Nginx", "DevSecOps"],
   },
   {
     icon: "🤖",
@@ -177,10 +177,10 @@ const services = [
 const experiences: Experience[] = [
   {
     role: "Senior Software Engineer",
-    company: "Tivit",
+    company: "Tivit Decisions",
     period: "Jul 2026 · Atual",
     description:
-      "Engenharia de software sênior com foco em backend Node.js, construção de APIs REST e infraestrutura em AWS.",
+      "Engenharia de software sênior na vertical de decisão, atuando com gestão de antifraude e análise de crédito para grandes clientes — bancos, logísticas e corporações. Trabalho diário com Kubernetes, RabbitMQ, AWS, segurança, DevSecOps e inteligência artificial aplicada à automação desses processos.",
   },
   {
     role: "Tech Lead → Senior Software Engineer",
@@ -262,7 +262,7 @@ export function App() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="status-badge">Senior Software Engineer · Tivit</div>
+            <div className="status-badge">Senior Software Engineer · Tivit Decisions</div>
             <h1>
               Thomas <span className="accent">Moraes</span>
             </h1>
@@ -305,10 +305,10 @@ export function App() {
                   <span className="prompt">~/thomas $</span> whoami
                 </div>
                 <div className="terminal-line">
-                  <span className="output">&nbsp;&nbsp;Role: Senior Software Engineer @ Tivit</span>
+                  <span className="output">&nbsp;&nbsp;Role: Senior Software Engineer @ Tivit Decisions</span>
                 </div>
                 <div className="terminal-line">
-                  <span className="output">&nbsp;&nbsp;Stack: PHP · Node.js · TypeScript · IA</span>
+                  <span className="output">&nbsp;&nbsp;Stack: Node.js · Kubernetes · AWS · DevSecOps</span>
                 </div>
                 <div className="terminal-line">
                   <span className="output">&nbsp;&nbsp;Consulting: Backoffice · ERP · Automações</span>

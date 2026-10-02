@@ -37,7 +37,7 @@ const profileImage = `${import.meta.env.BASE_URL}perfil-thomas-moraes.jpeg`;
 const stats = [
   { value: "7+", label: "Anos de experiência" },
   { value: "Tech Lead", label: "Semexe · 2 anos" },
-  { value: "9", label: "Áreas de stack" },
+  { value: "10", label: "Áreas de stack" },
 ];
 
 const stackGroups: StackGroup[] = [
@@ -83,7 +83,14 @@ const stackGroups: StackGroup[] = [
     title: "Infraestrutura & Cloud",
     description:
       "Configurar, containerizar e sustentar aplicações web com ambientes mais previsíveis e reproduzíveis.",
-    items: ["Docker", "Docker Compose", "Linux", "GitHub Actions", "Buddy", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
+    items: ["Kubernetes", "Docker", "Docker Compose", "Linux", "GitHub Actions", "Buddy", "AWS", "Google Cloud Platform", "Apache", "Nginx"],
+  },
+  {
+    icon: "🔐",
+    title: "Segurança & DevSecOps",
+    description:
+      "Segurança integrada ao ciclo de desenvolvimento, do código ao deploy, em sistemas críticos de antifraude e análise de crédito.",
+    items: ["DevSecOps", "Segurança de aplicações", "Antifraude", "Análise de crédito", "Kubernetes", "AWS"],
   },
   {
     icon: "🤖",
@@ -177,10 +184,15 @@ const services = [
 const experiences: Experience[] = [
   {
     role: "Senior Software Engineer",
-    company: "Tivit",
+    company: "Tivit Decisions",
     period: "Jul 2026 · Atual",
     description:
-      "Engenharia de software sênior com foco em backend Node.js, construção de APIs REST e infraestrutura em AWS.",
+      "Atuação em soluções de antifraude e análise de crédito para grandes clientes, entre bancos, empresas de logística e grandes corporações.",
+    achievements: [
+      "Trabalho diário com Kubernetes, RabbitMQ e AWS na sustentação e evolução de sistemas críticos de decisão.",
+      "Foco em segurança e DevSecOps, integrando práticas de segurança do desenvolvimento à entrega em produção.",
+      "Uso de inteligência artificial aliada à automação dos processos de antifraude e análise de crédito.",
+    ],
   },
   {
     role: "Tech Lead → Senior Software Engineer",
@@ -262,13 +274,14 @@ export function App() {
       <section className="hero" id="inicio">
         <div className="hero-grid">
           <div className="hero-copy">
-            <div className="status-badge">Senior Software Engineer · Tivit</div>
+            <div className="status-badge">Senior Software Engineer · Tivit Decisions</div>
             <h1>
               Thomas <span className="accent">Moraes</span>
             </h1>
             <p className="lead">
               Engenheiro de Software com 7+ anos de experiência e trajetória de Junior a Tech Lead.
-              Especialista em backend PHP e Node.js, integrações com ERP, automações com IA e
+              Hoje na Tivit Decisions, atuando com antifraude e análise de crédito para grandes
+              clientes. Especialista em backend PHP e Node.js, integrações com ERP, automações com IA e
               arquitetura para produtos digitais que precisam escalar. Consultor independente para
               projetos de backoffice, ERP e automação.
             </p>
@@ -305,10 +318,13 @@ export function App() {
                   <span className="prompt">~/thomas $</span> whoami
                 </div>
                 <div className="terminal-line">
-                  <span className="output">&nbsp;&nbsp;Role: Senior Software Engineer @ Tivit</span>
+                  <span className="output">&nbsp;&nbsp;Role: Senior Software Engineer @ Tivit Decisions</span>
                 </div>
                 <div className="terminal-line">
                   <span className="output">&nbsp;&nbsp;Stack: PHP · Node.js · TypeScript · IA</span>
+                </div>
+                <div className="terminal-line">
+                  <span className="output">&nbsp;&nbsp;Focus: Antifraude · Crédito · DevSecOps</span>
                 </div>
                 <div className="terminal-line">
                   <span className="output">&nbsp;&nbsp;Consulting: Backoffice · ERP · Automações</span>
